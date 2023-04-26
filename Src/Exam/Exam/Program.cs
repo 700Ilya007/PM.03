@@ -49,9 +49,11 @@ namespace Exam
                 fishArray[i] = new Fish(fishType, manufacturer, price);
             }
         }
-   
 
-        
+        public void SortArray()
+        {
+            Array.Sort(fishArray, new FishComparer());
+        }
         public void SaveArrayToFile(string filePath)
         {
             using (StreamWriter writer = new StreamWriter(filePath))
@@ -80,7 +82,6 @@ namespace Exam
         }
     }
 
-
     class Program
     {
         static void Main(string[] args)
@@ -90,10 +91,10 @@ namespace Exam
 
             FishControl fishControl = new FishControl(size);
             fishControl.FillArray();
-          
+            fishControl.SortArray();
             fishControl.SaveArrayToFile("fish_data.txt");
 
-            Console.WriteLine("Данные о рыбе сохраняются в файл.");
+            Console.WriteLine("Данные о рыбе сохранены в файл.");
             Console.ReadLine();
         }
     }
