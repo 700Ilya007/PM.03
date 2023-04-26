@@ -49,6 +49,53 @@ namespace Exam
                 fishArray[i] = new Fish(fishType, manufacturer, price);
             }
         }
+   
 
+        
+        public void SaveArrayToFile(string filePath)
+        {
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                foreach (Fish fish in fishArray)
+                {
+                    writer.WriteLine(fish.FishType + "," + fish.Manufacturer + "," + fish.Price);
+                }
+            }
+        }
+
+        private class FishComparer : IComparer<Fish>
+        {
+            public int Compare(Fish x, Fish y)
+            {
+                int typeComparison = y.FishType.CompareTo(x.FishType);
+                if (typeComparison != 0)
+                {
+                    return typeComparison;
+                }
+                else
+                {
+                    return y.Price.CompareTo(x.Price);
+                }
+            }
+        }
+    }
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Введите размер массива рыб: ");
+            int size = int.Parse(Console.ReadLine());
+
+            FishControl fishControl = new FishControl(size);
+            fishControl.FillArray();
+          
+            fishControl.SaveArrayToFile("fish_data.txt");
+
+            Console.WriteLine("Данные о рыбе сохраняются в файл.");
+            Console.ReadLine();
+        }
     }
 }
+
