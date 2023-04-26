@@ -86,16 +86,24 @@ namespace Exam
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите размер массива рыб: ");
-            int size = int.Parse(Console.ReadLine());
+            try
+            {
+                Console.Write("Введите размер массива рыб: ");
+                int size = int.Parse(Console.ReadLine());
 
-            FishControl fishControl = new FishControl(size);
-            fishControl.FillArray();
-            fishControl.SortArray();
-            fishControl.SaveArrayToFile("fish_data.txt");
+                FishControl fishControl = new FishControl(size);
+                fishControl.FillArray();
+                fishControl.SortArray();
+                fishControl.SaveArrayToFile("fish_data.txt");
 
-            Console.WriteLine("Данные о рыбе сохранены в файл.");
-            Console.ReadLine();
+                Console.WriteLine("Данные о рыбе сохранены в файл.");
+                Console.ReadLine();
+            }
+            catch
+            {
+                Console.WriteLine("Ошибка");
+                Console.ReadKey();
+            }
         }
     }
 }
