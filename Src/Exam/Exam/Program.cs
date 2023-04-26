@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace ConsoleApp1
+namespace Exam
 {
 
     public class Fish
@@ -14,7 +14,7 @@ namespace ConsoleApp1
         public string Manufacturer { get; set; }
         public string Price { get; set; }
 
-       
+   
         public Fish(string fishType, string manufacturer, string price)
         {
             FishType = fishType;
@@ -25,12 +25,29 @@ namespace ConsoleApp1
 
     public class FishControl
     {
-     
+
         private Fish[] fishArray;
 
         public FishControl(int size)
         {
             fishArray = new Fish[size];
+        }
+
+
+        public void FillArray()
+        {
+            for (int i = 0; i < fishArray.Length; i++)
+            {
+                Console.WriteLine("Введите данные о рыбе #" + (i + 1));
+                Console.Write("Вид рыбы: ");
+                string fishType = Console.ReadLine();
+                Console.Write("Производитель: ");
+                string manufacturer = Console.ReadLine();
+                Console.Write("Цена: ");
+                string price = Console.ReadLine();
+
+                fishArray[i] = new Fish(fishType, manufacturer, price);
+            }
         }
 
     }
