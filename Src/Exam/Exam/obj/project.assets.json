@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ILYA\\source\\repos\\Exam\\Exam\\Exam.csproj",
+      "projectUniqueName": "C:\\Users\\ILYA\\source\\repos\\Src\\Exam\\Exam\\Exam.csproj",
       "projectName": "Exam",
-      "projectPath": "C:\\Users\\ILYA\\source\\repos\\Exam\\Exam\\Exam.csproj",
+      "projectPath": "C:\\Users\\ILYA\\source\\repos\\Src\\Exam\\Exam\\Exam.csproj",
       "packagesPath": "C:\\Users\\ILYA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ILYA\\source\\repos\\Exam\\Exam\\obj\\",
+      "outputPath": "C:\\Users\\ILYA\\source\\repos\\Src\\Exam\\Exam\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

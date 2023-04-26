@@ -14,7 +14,7 @@ namespace ConsoleApp1
         public string Manufacturer { get; set; }
         public string Price { get; set; }
 
-        //конструктор класса
+       
         public Fish(string fishType, string manufacturer, string price)
         {
             FishType = fishType;
@@ -23,5 +23,15 @@ namespace ConsoleApp1
         }
     }
 
-   
+    public class FishControl
+    {
+     
+        private Fish[] fishArray;
+
+        public FishControl(int size)
+        {
+            fishArray = new Fish[size];
+        }
+
+    }
 }
